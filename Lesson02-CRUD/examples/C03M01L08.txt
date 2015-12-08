@@ -1,0 +1,20 @@
+_________________________________________________________________________
+#(Slide 3)
+#Paging Limit
+db[:zips].find.limit(3).each { |r| pp r}
+
+_________________________________________________________________________
+#(slide 4)
+#Limit and Skip
+db[:zips].find.skip(3).limit(3).each { |r| pp r}
+
+_________________________________________________________________________
+#(slide 5)
+# Sorting
+#ASCENDING
+db[:zips].find.limit(3).sort({:city => 1 }).each { |r| pp r}
+
+
+#DESCENDING
+db[:zips].find.limit(3).sort({:city => -1 }).each { |r| pp r}
+

@@ -1,0 +1,37 @@
+#disable logging
+require 'mongo'; Mongo::Logger.logger.level = ::Logger::INFO
+
+#get a connection
+db = Mongo::Client.new('mongodb://localhost:27017')
+
+#use test
+db=db.use('test')
+
+#database name
+db.database.name
+
+# List collections
+db.database.collections  OR
+db.database.collection_names
+________________________________________________________
+#(Slide 3)
+#insert_one
+db[:zips].insert_one(:_id => "100",:city => "city01",:loc => [ -76.05922700000001, 39.564894],:pop => 4678,:state => "MD")
+
+#find count (for insert_one)
+db[:zips].find(:city => "city01").count
+
+________________________________________________________
+#(Slide 4)
+#insert_many
+db[:zips].insert_many([ 
+{ :_id => "200", :city => "city02",:loc => [ -74.05922700000001, 37.564894 ],:pop => 2000, :state => "CA" },
+{ :_id => "201", :city => "city03",:loc => [ -75.05922700000001,35.564894 ], 
+  :pop => 3000, :state => "CA" }
+])
+
+________________________________________________________
+#(Slide 5)
+#find count (for insert_many)
+db[:zips].find(:city => 'city02').count
+db[:zips].find(:city => 'city03').count

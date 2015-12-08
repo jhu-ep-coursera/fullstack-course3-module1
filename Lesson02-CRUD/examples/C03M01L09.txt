@@ -1,0 +1,46 @@
+	_________________________________________________________________________
+#(slide 2)
+#Find By lt and gt operator
+db[:zips].find(:city => {:$lt =>  'D'}).limit(2).to_a.each { |r| pp r}
+
+db[:zips].find(:city => {:$lt => 'P', :$gt => 'B'}).limit(3).to_a.each{ |r| pp r}
+
+
+_________________________________________________________________________
+#(slide 3)
+#Find by REGEX
+db[:zips].find(:city => {:$regex => 'X'}).limit(5).each {|r| pp r}
+
+
+_________________________________________________________________________
+#(slide 4)
+#Find by REGEX
+db[:zips].find(:city => {:$regex => 'X$'}).limit(5).each {|r| pp r}
+
+________________________________________________________________________
+#(slide 5)
+#Find by REGEX
+db[:zips].find(:city => {:$regex => '^X'}).projection({:_id => false}).limit(5).to_a.each {|r| pp r}
+
+________________________________________________________________________
+#(slide 6)
+#Find by REGEX
+db[:zips].find(:city => {:$regex => '^[A-E]'}).projection({:_id => false}).limit(5).to_a.each {|r| pp r}
+
+
+_______________________________________________________________________
+#(slide 7)
+#Find by $exists
+db[:zips].find(:city => {:$exists => true}).projection({:_id => false}).limit(3).to_a.each {|r| pp r}
+
+______________________________________________________________________
+#(slide 8)
+#Find by $not
+db[:zips].find(:pop => {'$not' => {'$gt' => 9500}}).projection({_id:false}).limit(20).to_a.each {|r| pp r}
+
+______________________________________________________________________
+#(slide 9)
+#Find by $type
+db[:zips].find({:state=> {:$type => 2}}).first
+
+
