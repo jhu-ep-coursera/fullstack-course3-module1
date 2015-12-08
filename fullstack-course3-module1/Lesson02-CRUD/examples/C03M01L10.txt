@@ -1,0 +1,63 @@
+
+
+_________________________________________________________________________
+#(slide 2)
+#replace_one
+
+# first-add a new city (:city => "citytemp")
+db[:zips].insert_one(:_id => "100", :city => "citytemp", :loc => [ -76.05922700000001, 39.564894 ], :pop => 4678, :state => "MD" )
+
+
+# check the insertion
+db[:zips].find(:city => 'citytemp').first
+
+# replace city name from 'citytemp' to 'city02'
+db[:zips].find(:_id => "100").replace_one(:_id => "100", :city => "city02", :loc => [ -78.22, 36.22 ], :pop => 2000, :state => "MD" ) 
+
+
+# check to see if 'city02' is there using _id - YES
+db[:zips].find(:_id => "100").to_a
+
+_________________________________________________________________________
+#(slide 3)
+#update_one
+  
+
+# find and then update_one
+db[:zips].find(:_id => "100").update_one(:$set => {:city => "name2"}) 
+
+
+# verify the update_one
+db[:zips].find(:_id => "100").to_a
+ 
+ _____________________________________________________________________
+#(slide 4) 
+#update_many
+db[:zips].find(:state => 'MD').count
+db[:zips].find(:state => 'MD').update_many(:$set => {:state => 'XX'}) 
+db[:zips].find(:state => 'MD').count
+db[:zips].find(:state => 'XX').count
+
+_________________________________________________________________________
+#(slide 5)
+#delete_one
+db[:zips].find(:city => 'name2').count
+db[:zips].find(:city => 'name2').delete_one()
+db[:zips].find(:city => 'name2').count
+
+_________________________________________________________________________
+#(slide 6)
+#delete_many
+db[:zips].find(:state => 'MD' ).delete_many()
+
+_____________________________________________________________________
+# (slide 7)
+#upsert
+db[:zips].find(:city => "ODENVILLE1").count
+db[:zips].find(:city => "ODENVILLE2").count
+db[:zips].find(:city => "ODENVILLE1").update_one({:$set => {:city => "ODENVILLE2"}}, :upsert => true)
+db[:zips].find(:city => "ODENVILLE1").count
+db[:zips].find(:city => "ODENVILLE2").count
+
+ 
+ 

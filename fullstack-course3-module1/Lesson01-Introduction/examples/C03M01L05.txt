@@ -1,0 +1,25 @@
+
+# (Slide #2) - Data Importing
+mongoimport --db test --collection zips --drop --file zips.json 
+________________________________________________________
+
+# (Slide #7)
+
+#disable logging
+require 'mongo'; Mongo::Logger.logger.level = ::Logger::INFO
+
+#get a connection
+db = Mongo::Client.new('mongodb://localhost:27017')
+
+#use test
+db=db.use('test')
+
+#database name
+db.database.name
+
+# List collections
+db.database.collections  OR
+db.database.collection_names
+
+# Find first
+db[:zips].find.first 

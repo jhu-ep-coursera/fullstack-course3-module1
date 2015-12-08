@@ -1,0 +1,43 @@
+
+_________________________________________________________________________
+#(Slide 3)
+#find by example 
+db[:zips].find(:city => "BALTIMORE")
+
+#find first
+db[:zips].find.first
+db[:zips].find(:state => "MD").first
+
+
+#distinct
+db[:zips].find.distinct(:state)
+
+_________________________________________________________________________
+#(Slide 4)
+#find by (hash) - passing parameters
+db[:zips].find(:city => "GERMANTOWN").count
+db[:zips].find(:city => "GERMANTOWN").first
+
+require 'pp'
+
+pp db[:zips].find(:city => "GERMANTOWN", :state => "NY").first
+pp db[:zips].find(:city => "GERMANTOWN", :state => "MD").first
+
+
+_________________________________________________________________________
+#(Slide 5)
+#cursor iterations
+db[:zips].find().each { |r| puts r }
+
+db[:zips].find().each { |r| pp r }
+
+
+_________________________________________________________________________
+#(Slide 7)
+
+#PROJECTIONS - 
+db[:zips].find({:state => "MD"}).projection(state:true, _id:false).first
+
+ 
+ 
+ 
