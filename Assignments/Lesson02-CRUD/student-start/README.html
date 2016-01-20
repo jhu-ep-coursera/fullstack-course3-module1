@@ -56,13 +56,13 @@ $ gem install mongo -v 2.1.2</code></pre></li>
 <p>Implement all methods relative to the <code>@coll</code> instance variable setup to reference the collection.</p>
 <h3 id="technical-requirements">Technical Requirements</h3>
 <p>As you implement each requirement, the following is provided to help familiarize you with the schema associated with a race document:</p>
-<pre class="sourceCode json"><code class="sourceCode json">{<span class="dt">&quot;_id&quot;</span><span class="er">=&gt;BSON</span>:<span class="er">:ObjectId(&#39;</span><span class="dv">564</span><span class="er">c</span><span class="dv">01</span><span class="er">c</span><span class="dv">886</span><span class="er">c</span><span class="dv">12</span><span class="er">c</span><span class="dv">3</span><span class="er">d</span><span class="dv">3</span><span class="er">d</span><span class="dv">0003</span><span class="er">ca&#39;)</span>,
- <span class="dt">&quot;number&quot;</span><span class="er">=&gt;970</span>,
- <span class="dt">&quot;first_name&quot;</span><span class="er">=&gt;</span><span class="dt">&quot;LONNIE&quot;</span>,
- <span class="dt">&quot;last_name&quot;</span><span class="er">=&gt;</span><span class="dt">&quot;FITZGERALD&quot;</span>,
- <span class="dt">&quot;gender&quot;</span><span class="er">=&gt;</span><span class="dt">&quot;F&quot;</span>,
- <span class="dt">&quot;group&quot;</span><span class="er">=&gt;</span><span class="dt">&quot;14 and under&quot;</span>,
- <span class="dt">&quot;secs&quot;</span><span class="er">=&gt;2258</span>}</code></pre>
+<pre class="sourceCode ruby"><code class="sourceCode ruby">{<span class="st">&quot;_id&quot;</span>=&gt;<span class="dt">BSON</span>::<span class="dt">ObjectId</span>(<span class="st">&#39;564c01c886c12c3d3d0003ca&#39;</span>),
+ <span class="st">&quot;number&quot;</span>=&gt;<span class="dv">970</span>,
+ <span class="st">&quot;first_name&quot;</span>=&gt;<span class="st">&quot;LONNIE&quot;</span>,
+ <span class="st">&quot;last_name&quot;</span>=&gt;<span class="st">&quot;FITZGERALD&quot;</span>,
+ <span class="st">&quot;gender&quot;</span>=&gt;<span class="st">&quot;F&quot;</span>,
+ <span class="st">&quot;group&quot;</span>=&gt;<span class="st">&quot;14 and under&quot;</span>,
+ <span class="st">&quot;secs&quot;</span>=&gt;<span class="dv">2258</span>}</code></pre>
 <h4 id="lecture-1-create">Lecture 1: Create</h4>
 <p>In this section we will use <code>delete_many</code>, <code>insert_many</code>, and <code>insert_one</code> to implement and test different create metthods.</p>
 <ol style="list-style-type: decimal">
@@ -238,4 +238,4 @@ $ gem install mongo -v 2.1.2</code></pre></li>
 (N) examples, 0 failures</code></pre>
 <h3 id="submission">Submission</h3>
 <p>There is no submission required for this assignment but the skills learned will be part of a follow-on assignment so please complete this to the requirements of the unit test.</p>
-<h3 id="last-updated-2015-12-05">Last Updated: 2015-12-05</h3>
+<h3 id="last-updated-2015-01-19">Last Updated: 2015-01-19</h3>

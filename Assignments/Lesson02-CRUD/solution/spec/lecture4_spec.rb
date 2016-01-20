@@ -40,8 +40,8 @@ describe Solution do
       expect((Solution.instance_method(:find_between).parameters.flatten - [:opt, :req]).count).to eq(2)
     end
     it "find_between finds all race results with a time between input parameter values (exclusive)" do
-      min = 10
-      max = 50
+      min = 1250
+      max = 1300
       counter = 0
       base_list = @race_col.find
       base_list.each do |val|

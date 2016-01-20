@@ -90,7 +90,7 @@ Implement all methods relative to the `@coll` instance variable setup to referen
 
 As you implement each requirement, the following is provided to help familiarize you with the schema associated with a race document:
 
-```json
+```ruby
 {"_id"=>BSON::ObjectId('564c01c886c12c3d3d0003ca'),
  "number"=>970,
  "first_name"=>"LONNIE",
@@ -357,4 +357,4 @@ There is no submission required for this assignment but the
 skills learned will be part of a follow-on assignment so 
 please complete this to the requirements of the unit test.
 
-### Last Updated: 2015-12-05
+### Last Updated: 2015-01-19
