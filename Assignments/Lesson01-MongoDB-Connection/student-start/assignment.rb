@@ -1,12 +1,13 @@
 require 'pp'
 
 class Solution
-
+  @@db = nil
+  
   #Implement a class method in the `Solution` class called `mongo_client` that will 
   def self.mongo_client
     #create a `Mongo::Client` connection to the server using a URL (.e.g., 'mongodb://localhost:27017')
     #configure the client to use the `test` database
-    #return that client
+    #assign the client to @@db instance variable and return that client
     
   end
 

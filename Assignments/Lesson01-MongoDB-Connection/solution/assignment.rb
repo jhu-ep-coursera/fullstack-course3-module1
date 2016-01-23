@@ -5,19 +5,21 @@ require 'byebug'
 #Mongo::Logger.logger.level = ::Logger::DEBUG
 
 class Solution
-
+  @@db = nil
+  
   def self.mongo_client
-    db=Mongo::Client.new('mongodb://localhost:27017')
-    @@db=db.use('test')
+    @@db = Mongo::Client.new('mongodb://localhost:27017/test')
   end
 
   # implement an instance method that returns a reference to the Mongo Collection object
   def self.collection
-    return @@db[:zips]
+    self.mongo_client if not @@db
+    @@db[:zips]
   end
 
   def sample
-    self.class.collection.find.first
+    self.class.mongo_client if not @@db
+	self.class.collection.find.first
   end
 end
 
