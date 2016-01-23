@@ -19,7 +19,7 @@ class Solution
 
   def sample
     self.class.mongo_client if not @@db
-	self.class.collection.find.first
+    self.class.collection.find.first
   end
 end
 
