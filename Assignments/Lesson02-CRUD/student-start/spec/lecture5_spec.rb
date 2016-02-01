@@ -48,7 +48,7 @@ describe Solution do
 
       item = solution.update_racer(hval)
       expect(item).to be_a(Mongo::Operation::Result)
-      expect(item.first[:nModified]).to eq(1)
+      expect(item.first[:n]).to eq(1)
 
       # confirm object in mongo has updated fields
       expect(@race_col.find(_id: hval[:_id]).first).to eq(hval)
