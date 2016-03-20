@@ -70,7 +70,7 @@ describe Solution do
       letter = 'M'
       base_list = @race_col.find
       base_list.each do |r|
-        if (r[:last_name].upcase.start_with?(letter))
+        if (r[:last_name] != nil && r[:last_name].upcase.start_with?(letter))
           counter = counter + 1
         end
       end
