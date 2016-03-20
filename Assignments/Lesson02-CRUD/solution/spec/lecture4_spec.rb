@@ -45,7 +45,7 @@ describe Solution do
       counter = 0
       base_list = @race_col.find
       base_list.each do |val|
-        if val[:secs] > min && val[:secs] < max 
+        if val[:secs] != nil && val[:secs] > min && val[:secs] < max 
           counter = counter + 1
         end
       end
