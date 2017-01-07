@@ -7,7 +7,7 @@ class Solution
   def self.mongo_client
     #create a `Mongo::Client` connection to the server using a URL (.e.g., 'mongodb://localhost:27017')
     #configure the client to use the `test` database
-    #assign the client to @@db instance variable and return that client
+    #assign the client to @@db class variable and return that client
     
   end
 
